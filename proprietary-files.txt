@@ -39,13 +39,10 @@ lib/libchromatix_s5k3h1gx_zsl.so
 # Graphics
 lib/egl/eglsubAndroid.so
 lib/egl/libEGL_adreno200.so
-lib/egl/libGLES_android.so
 lib/egl/libGLESv1_CM_adreno200.so
 lib/egl/libGLESv2_adreno200.so
 lib/egl/libq3dtools_adreno200.so
 lib/libC2D2.so
-lib/libgsl.so
-lib/libOpenVG.so
 lib/libsc-a2xx.so
 
 # Misc libraries
@@ -73,3 +70,9 @@ lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl_jni.so
 lib/libmpl.so
+
+# Wifi calling
+app/HTC-PYRTM-ICS-4.0.1-2.3-49986-4.3.apk
+lib/libganril.so
+lib/libkineto.so
+lib/librilswitch.so
