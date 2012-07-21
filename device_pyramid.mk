@@ -17,12 +17,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := cm_pyramid
-PRODUCT_DEVICE := pyramid
-PRODUCT_BRAND := HTC
-PRODUCT_MODEL := HTC Sensation
-
 # common msm8660 configs
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
 
@@ -49,6 +43,7 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329
 
 # Boot ramdisk setup
 PRODUCT_COPY_FILES += \
+    device/htc/pyramid/ramdisk/fstab.pyramid:root/fstab.pyramid \
     device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
     device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
     device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
@@ -112,10 +107,11 @@ PRODUCT_COPY_FILES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 # Custom media config for HTC camera
 PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/configs/media_codecs.xml:system/etc/media_codecs.xml \
     device/htc/pyramid/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 ## misc
@@ -138,11 +134,10 @@ PRODUCT_COPY_FILES += \
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
 
-
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/pyramid/media_a1026.mk)
 
 ## htc audio settings
 $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 
-$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
