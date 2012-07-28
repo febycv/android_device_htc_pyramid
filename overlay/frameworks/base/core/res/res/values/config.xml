@@ -24,7 +24,11 @@
     <!-- Boolean indicating if current platform supports quick switch-on/off of
          Bluetooth module -->
     <bool name="config_bluetooth_adapter_quick_switch">false</bool>
-
+    
+    <!-- Google Now Network Connection Fix. -->
+    <string name="config_networkLocationProviderPackageName" translatable="false">com.google.android.location</string>
+    <string name="config_geocodeProviderPackageName" translatable="false">com.google.android.location</string>
+    
     <!-- Default color for notification LED is green. -->
     <color name="config_defaultNotificationColor">#ff00ff00</color>
 
